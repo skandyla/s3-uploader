@@ -1,0 +1,16 @@
+package version
+
+import "runtime"
+
+var (
+	// BuildCommit ...
+	BuildVersion = "?"
+	// BuildCommit ...
+	BuildCommit = "?"
+	// BuildTime ...
+	BuildTime = "?"
+	// BuildBranch ...
+	BuildBranch = "?"
+	// GoVersion ...
+	GoVersion = runtime.Version()
+)

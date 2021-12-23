@@ -1,0 +1,33 @@
+version: '3.9'
+
+services:
+  app:
+    # name of current services, builded by make
+    image: s3-uploader
+    ports:
+      - "8080:8080"
+    environment:
+      APP_POSTGRES_DSN: "postgres://db_user:db_pass@db/s3_uploader?sslmode=disable"
+      APP_LOG_LEVEL: "debug"
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: postgres:13-alpine
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+       - db-data:/var/lib/postgresql
+       - ./postgres:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_USER: db_user
+      POSTGRES_PASSWORD: db_pass
+      POSTGRES_DB:  s3_uploader
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d s3_uploader -U db_user"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+volumes:
+  db-data:
