@@ -1,0 +1,27 @@
+### Todo list
+- [x] project structure
+- [x] makefile
+- [x] base docker compose
+- [x] using remote docker compose instructions
+- [x] github actions linter, build goals
+- [x] postgresql base schema for users
+- [ ] postgresql schema for files per user
+- [x] /livenes endpoint
+- [x] /__service/status endpoint
+- [ ] /files endpoints
+- [ ] /upload endpoints
+- [x] /sign-up endpoint
+- [x] /sign-in endpoint
+- [x] /refresh_tokens endpoint
+- [x] jwt
+- [x] config (envconfig)
+- [x] migrations (golang-migrate)
+- [x] logging (logrus)
+- [x] postman
+- [ ] swaeger
+- [ ] Unit tests
+- [ ] Mocks
+- [ ] S3
+- [ ] labstack
+- [ ] provision infra, autodeploys
+- [ ] improve logging. Add dedicated error message: `{"level":"error","msg":"signUp:service: pq: relation \"users\" does not exist\n","time":"2021-12-31T23:23:07+03:00"}`
