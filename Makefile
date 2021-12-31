@@ -55,3 +55,6 @@ docker_compose_run_tests:
 	@echo MARK: Testing via docker-compose 
 	curl localhost:8080/liveness
 	curl localhost:8080/__service/info
+
+migrations_up:
+	migrate -path migrations -database "postgres://db_user:db_pass@$${PGHOST}/s3_uploader?sslmode=disable" up
