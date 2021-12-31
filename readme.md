@@ -27,12 +27,11 @@ upply migrations:
 
 
 ### Testing against remote docker-compose
-`export DOCKER_HOST=ssh://root@80.249.144.16`  
+`export REMOTE_DOCKER_IP=x.x.x.x`  
+`export DOCKER_HOST=ssh://root@${REMOTE_DOCKER_IP}`  
 
-add to /etc/hosts:  
-`80.249.144.16 docker.dev.host`  
-
-`export PGHOST=docker.dev.host`  
-`migrate -path migrations -database "postgres://db_user:db_pass@$PGHOST/s3_uploader?sslmode=disable" up`  
+`migrate -path migrations -database "postgres://db_user:db_pass@${REMOTE_DOCKER_IP}/s3_uploader?sslmode=disable" up`  
+```
 20211223205123/u create_users (656.998494ms)
 20211223205308/u refresh_tokens (1.231881717s)
+```
