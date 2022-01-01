@@ -17,7 +17,7 @@
 - [x] config (envconfig)
 - [x] migrations (golang-migrate)
 - [x] logging (logrus)
-- [x] postman
+- [x] postman & newman
 - [ ] swagger
 - [ ] Unit tests
 - [ ] Mocks
