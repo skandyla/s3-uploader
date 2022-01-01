@@ -3,7 +3,7 @@
 .DEFAULT_GOAL := all
 all: lint test
 
-IMAGENAME=microtester
+IMAGENAME=s3-uploader
 PROJECT ?= github.com/skandyla/${IMAGENAME}
 BUILD_VERSION=$(shell git describe --tags --always)
 BUILD_COMMIT?=$(shell git rev-parse --short HEAD)
@@ -27,13 +27,11 @@ cover:
 	go test -v ./... -coverprofile=/tmp/c.out
 	go tool cover -func=/tmp/c.out
 
-
 GO_VERSION_FLAGS= -X ${PROJECT}/internal/version.BuildVersion=${BUILD_VERSION} -X ${PROJECT}/internal/version.BuildCommit=${BUILD_COMMIT} -X ${PROJECT}/internal/version.BuildTime=${BUILD_TIME} -X ${PROJECT}/internal/version.BuildBranch=${BUILD_BRANCH}
 
 build:
 	@echo MARK: build go code
 	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -v --ldflags "-extldflags '-static' ${GO_VERSION_FLAGS}" -o main
-
 
 docker_image:
 	@echo MARK: package build code inside docker image
