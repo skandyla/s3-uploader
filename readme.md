@@ -35,3 +35,7 @@ upply migrations:
 20211223205123/u create_users (656.998494ms)
 20211223205308/u refresh_tokens (1.231881717s)
 ```
+
+### Testing via postman\newman
+`newman run s3-uploader.postman_collection.json -e Local.postman_environment.json`  
+![newman\postman tests](./static/newman.png)

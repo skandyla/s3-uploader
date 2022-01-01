@@ -18,10 +18,10 @@
 - [x] migrations (golang-migrate)
 - [x] logging (logrus)
 - [x] postman
-- [ ] swaeger
+- [ ] swagger
 - [ ] Unit tests
 - [ ] Mocks
 - [ ] S3
-- [ ] labstack
+- [ ] localstack
 - [ ] provision infra, autodeploys
 - [ ] improve logging. Add dedicated error message: `{"level":"error","msg":"signUp:service: pq: relation \"users\" does not exist\n","time":"2021-12-31T23:23:07+03:00"}`
