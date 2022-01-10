@@ -23,5 +23,5 @@
 - [ ] Mocks
 - [ ] S3
 - [ ] localstack
-- [ ] provision infra, autodeploys
+- [x] provision infra, autodeploys
 - [ ] improve logging. Add dedicated error message: `{"level":"error","msg":"signUp:service: pq: relation \"users\" does not exist\n","time":"2021-12-31T23:23:07+03:00"}`
